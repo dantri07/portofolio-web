@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dantri sihombing | Entry level Backend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="DAN.jpg" alt="Dantri Jos Sihombing" class="profile-pic" />
+    <h1>Hi, i'm <span class="highlight">Dantri Jos Sihombing</span></h1>
+    <p>Backend Developer</p>
+  </header>
+  <nav>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('projects')">My Projects</button>
+    <button onclick="showSection('certificates')">Certificates</button>
+  </nav>
+
+  <section id="about" class="about active">
+    <h2>About Me</h2>
+    <p>
+      Back-End Developer and Informatics Engineering graduate from Politeknik Negeri Batam. 
+      Proficient in Golang for server-side logic and highly skilled in SQL for complex data retrieval and management. 
+      I am a detail-oriented individual with a strong commitment to finishing every task I undertake. 
+      I possess a continuous learning mindset, always staying updated with the latest industry trends to build robust and efficient backend systems.
+    </p>
+  </section>
+
+  <section id="projects" class="projects active">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Bootcamp Candidate Interview Application</h3>
+       <p>As part of my training at Enigma Camp, I worked with a team to develop a bootcamp candidate interview application.
+        In this project, I was responsible for building a robust CRUD foundation using Golang. We applied the principles of 
+        clean code to ensure that the code remained neat and easy to maintain. In addition, I also studied database management 
+        with SQL to handle candidate data flows in a structured manner.</p>
+        <p><a href="https://github.com/nesngenes/Bootcamp-Candidate-Interview-Application"><h5>Link GitHub</h5></a></p> 
+    </div>
+    <div class="project">
+     <h3>E Pelaporan Anodizing</h3>
+       <p>This website is a final project developed as one of the requirements for completing a Diploma 3 degree.
+        This website functions as a machine reporting system for the Anodizing Department and was developed using 
+        the Laravel framework. The system aims to improve the quality of machine maintenance through features such as damage reporting,
+        repair action logging, and real-time monitoring of report status. Additionally, 
+        there is a spare parts notification feature to ensure the availability of spare parts is maintained and
+        to support the smooth running of the machine maintenance process.</p>
+        <p><a href="https://github.com/dantri07/e_pelaporan_anodizing"><h5>Link GitHub</h5></a></p> 
+    </div>
+  </section>
+  <section id="certificates" class="certificates active">
+    <h2>Certificates</h2>
+    <div class="certificate-item" onclick="openModal('https://via.placeholder.com/800x600?text=Certificate+1', 'Enigma Camp Backend Bootcamp Completion')">
+     <h3>Enigma Camp Backend Bootcamp</h3>
+      <p>Proud to be a graduate of Enigma Camp! 🚀 I've spent the last 3 months diving deep into Golang and SQL. This certificate represents more than just hours of study; 
+        it reflects my ability to build high-performance backend systems and manage complex databases. Ready to bring these skills to a global tech team!</p>
+      <p>Issued by Enigma Camp • 2023</p>
+      <p><a href="https://drive.google.com/file/d/1w_qKoJ-Btu0d-j6EasPD9q5VRNs_mnIq/view?usp=drive_link"><h5>Certificate</h5></a></p> 
+    </div>
+    <div class="certificate-item" onclick="openModal('https://via.placeholder.com/800x600?text=Certificate+2', 'Golang Fundamental Course')">
+      <h3>Data Analytics course</h3>
+      <P>Data Fundamentals: Understanding the lifecycle and importance of data.
+          Data Management (Excel): Proficient in organizing and cleaning data using spreadsheets.
+          Introductory SQL: Capable of performing basic queries to retrieve and filter data</P>
+      <p>Issued by RevoU • 2025</p>
+      <p><a href="https://drive.google.com/file/d/1d11nNXMkSJDChKbVR1rilAflbtNKbnCb/view?usp=drive_link"><h5>Certificate</h5></a></p> 
+    </div>
+    <!-- Tambahkan lebih banyak sertifikat di sini -->
+  </section>
+
+  <!-- Modal for Certificate Preview -->
+  <div id="certificateModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modalImage" src="" alt="Certificate" />
+      <p id="modalCaption"></p>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>📍 Batam, Indonesia | ✉️ dantri07sihombing19@gmail.com | 💼 <a href="https://github.com/dantri07" target="_blank">GitHub</a></p>
+  </footer>
+  <script>
+    // Show selected section
+   function showSection(sectionId) {
+  // Sembunyikan semua section
+  document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+  // Tampilkan section yang dipilih
+  document.getElementById(sectionId).classList.add('active');
+
+  // Hapus class active dari semua tombol
+  document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+  // Tambahkan class active ke tombol yang diklik
+  event.target.classList.add('active');
+}
+  </script>
+</body>
+</html>
